@@ -3,9 +3,9 @@
 # Goes in a separate tap repo: github.com/shshalom/homebrew-watchdog
 # Path inside the tap repo: Formula/watchdog.rb
 #
-# The release workflow will auto-bump the version + sha256 values on each tag.
-# On release, update VERSION, *_ARM_SHA, *_INTEL_SHA, *_LINUX_SHA below and
-# copy this file into the tap repo as Formula/watchdog.rb.
+# The release workflow builds binaries on every tag. Update VERSION + the two
+# sha256 values below, then copy into the tap repo as Formula/watchdog.rb.
+# Intel macOS is not supported in v0.1.0 — Apple Silicon + Linux only.
 
 class Watchdog < Formula
   desc "Real-time spec-compliance and drift enforcement for AI coding agents"
@@ -17,10 +17,6 @@ class Watchdog < Formula
     on_arm do
       url "https://github.com/shshalom/watchdog/releases/download/v#{version}/watchdog-aarch64-apple-darwin.tar.gz"
       sha256 "REPLACE_WITH_ARM_SHA256"
-    end
-    on_intel do
-      url "https://github.com/shshalom/watchdog/releases/download/v#{version}/watchdog-x86_64-apple-darwin.tar.gz"
-      sha256 "REPLACE_WITH_INTEL_SHA256"
     end
   end
 

@@ -15,7 +15,7 @@ Watchdog observes what your agent writes, audits it against a spec you define, a
 ## Requirements
 
 - [Claude Code](https://claude.ai/code) CLI installed and authenticated
-- macOS (Apple Silicon or Intel) or Linux x86_64
+- macOS (Apple Silicon) or Linux x86_64 — Intel Mac users can build from source
 - Optional: Anthropic API key for LLM-based drift auditing (deterministic rules and dashboard work without it)
 
 ## Install

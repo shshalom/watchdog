@@ -31,6 +31,12 @@ case "$ARCH" in
 esac
 
 TARGET="${ARCH}-${OS}"
+
+# v0.1.0 ships Apple Silicon macOS + Linux x86_64. Intel Macs can build from source.
+if [ "$TARGET" = "x86_64-apple-darwin" ]; then
+  err "Intel Macs are not supported in this release. Build from source: https://github.com/${REPO}"
+fi
+
 say "Detected platform: $TARGET"
 
 # Fetch latest release tag
