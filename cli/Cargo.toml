@@ -1,0 +1,38 @@
+[package]
+name = "watchdog"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Real-time spec-compliance and drift enforcement for AI coding agents"
+repository = "https://github.com/shshalom/watchdog"
+readme = "../README.md"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+panic = "abort"
+
+[[bin]]
+name = "watchdog"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8", features = ["ws"] }
+tokio-stream = "0.1"
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
+reqwest = { version = "0.12", features = ["json"] }
+ureq = { version = "3", features = ["json"] }
+serde_yaml = "0.9"
+rust-embed = "8"
+mime_guess = "2"
+tower-http = { version = "0.6", features = ["cors"] }
+portable-pty = "0.8"

@@ -1,0 +1,23 @@
+# Rust
+/cli/target/
+*.rs.bk
+
+# Node
+/dashboard-web/node_modules/
+/dashboard-web/dist/
+/dashboard-web/.vite/
+
+# Runtime state
+.watchdog/
+.claude/
+
+# OS
+.DS_Store
+*.swp
+
+# Editor
+.idea/
+.vscode/
+
+# Logs
+*.log
